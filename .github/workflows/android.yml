@@ -25,3 +25,9 @@ jobs:
 
       - name: Build 32-bit APK
         run: ./gradlew assembleDebug -PabiFilters=armeabi-v7a
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: VerbForge-32bit-APK
+          path: app/build/outputs/apk/debug/app-debug.apk
