@@ -23,11 +23,11 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build 32-bit APK
-        run: ./gradlew assembleDebug -PabiFilters=armeabi-v7a
+      - name: Build 64-bit APK
+        run: ./gradlew assembleDebug -PabiFilters=arm64-v8a
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: VerbForge-32bit-APK
+          name: VerbForge-64bit-arm64-v8a
           path: app/build/outputs/apk/debug/app-debug.apk
